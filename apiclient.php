@@ -1,9 +1,9 @@
 <?php
 
 require_once dirname(__FILE__) . "/oauthutil.php";
-require_once dirname(__FILE__) . "signatures/ioauthsignaturemethod.interface.php";
-require_once dirname(__FILE__) . "signatures/plaintext.php";
-require_once dirname(__FILE__) . "signatures/hmac_sha1.php";
+require_once dirname(__FILE__) . "/signatures/ioauthsignaturemethod.interface.php";
+require_once dirname(__FILE__) . "/signatures/plaintext.php";
+require_once dirname(__FILE__) . "/signatures/hmac_sha1.php";
 
 class APIClient {
 
