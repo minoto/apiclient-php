@@ -200,10 +200,10 @@ class APIClient {
     public function getObject() {
         $object = @unserialize($this->response['body']);
         if($object === false) {
-            printStderr("Problem deserializing API response:");
+            $this->printStderr("Problem deserializing API response:");
             ob_start();
             print_r($this->response);
-            printStderr(ob_get_clean());
+            $this->printStderr(ob_get_clean());
             throw new APIClientException("Minoto API error. Failed to process result.");
         }
         return $object;
@@ -328,6 +328,10 @@ class APIClient {
             }
         }
         return implode('&', $normalized);
+    }
+
+    function printStderr($message) {
+        fwrite(STDERR, $message . PHP_EOL);
     }
 }
 
